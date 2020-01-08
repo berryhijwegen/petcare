@@ -1,0 +1,6 @@
+.vscode
+docs
+pet_project
+*.db
+__pycache__
+*.env

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% from "form_macros.html" import render_field %}
+{% block title %}
+Petcare -- Add Service
+{% endblock %}
+
+{% block content%}
+    <section>
+        <h1>Add Service</h1>
+        <form action="" method="post">
+            {{form.hidden_tag()}}
+        <table>
+            {{ render_field(form.service_name, size=50) }}
+            {{ render_field(form.description, size=100) }}
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+        </table>
+        </form>
+    </section>
+{% endblock %}

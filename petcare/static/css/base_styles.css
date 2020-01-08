@@ -1,0 +1,81 @@
+/* OVERALL */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* NAV BAR */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height: 50px;
+}
+
+nav li {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+  
+nav li a {
+    display: block;
+    padding: 0;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    text-align: center;
+    padding: 0 16px;
+    text-decoration: none;
+}
+  
+nav li a:hover {
+    background-color: #111;
+}
+
+
+/* MAIN WRAPPER */
+.main.wrapper {
+    display: flex;
+}
+
+/* FLASHES */
+.flashes ul {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 35vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flashes ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    max-height: 120px;
+    border-radius: 20px;
+    background: #d9d9d9;
+    list-style-type: none;
+}
+
+.flashes ul li .exclamation_box {
+    width: 20px;
+    border-right: black solid 2px;
+}
+
+.flashes ul li .message_text {
+    padding-left: 15px;
+}

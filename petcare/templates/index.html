@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+Petcare -- Welcome
+{% endblock %}
+
+{% block css_includes %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index_styles.css') }}">
+{% endblock %}
+
+{% block content%}
+    <article>
+        <header>
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1 class="hero-header-text">Petcare</h1>
+                    <p>Give your pet the treatment it deserves.</p>
+                </div>
+            </div>
+        </header>
+    </article>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% from "form_macros.html" import render_field %}
+{% block title %}
+Petcare -- Add User
+{% endblock %}
+
+{% block css_includes %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register_styles.css') }}">
+{% endblock %}
+
+{% block content%}
+    <section class="register_container">
+        <h1>Create a new account</h1>
+        <h3>Easy and fast.</h3>
+        <form action="" method="post">
+            {{form.hidden_tag()}}
+        <table>
+            {{ render_field(form.email, size=50) }}
+            {{ render_field(form.password, size=50) }}
+            {{ render_field(form.password_validate, size=50) }}
+            {{ render_field(form.display_name, size=50) }}
+            {{ render_field(form.first_name, size=50) }}
+            {{ render_field(form.surname, size=50) }}
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <button type="submit">Register</button>
+                    </td>
+                </tr>
+        </table>
+        </form>
+    </section>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
