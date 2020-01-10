@@ -50,14 +50,17 @@ nav li a:hover {
 }
 
 /* FLASHES */
+.flashes {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
 .flashes ul {
     position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    width: 35vw;
-    margin-left: auto;
-    margin-right: auto;
+    top: 25px;
+    padding: 0;
 }
 
 .flashes ul li {
@@ -67,15 +70,38 @@ nav li a:hover {
     min-height: 40px;
     max-height: 120px;
     border-radius: 20px;
-    background: #d9d9d9;
+    background: rgb(255, 222, 36);
     list-style-type: none;
+    margin: 0 10px;
+
+    -moz-animation: cssAnimation 2s ease-in 5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 2s ease-in 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 2s ease-in 5s forwards;
+    /* Opera */
+    animation: cssAnimation 2s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 
 .flashes ul li .exclamation_box {
     width: 20px;
     border-right: black solid 2px;
+    margin-left: 15px;
 }
 
 .flashes ul li .message_text {
-    padding-left: 15px;
+    padding: 0 15px;
+}
+
+@keyframes cssAnimation {
+    to {
+        opacity:0
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        opacity:0
+    }
 }

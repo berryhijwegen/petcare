@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/base_styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 
         {% block css_includes %}{% endblock %}
     </head>
@@ -32,32 +32,31 @@
                 </nav>
             </header>
         </div>
-        <div class="content-container">
-            <div class="main wrapper">
-                <article class="flashes">
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            <ul>
-                            {% for message in messages %}
-                                <li>
-                                    <div class="fix-height"></div>
-                                    <div class="exclamation_box vertical_center">
-                                        <i class="fa fa-exclamation vertical_center"></i>
-                                    </div>
-                                    <div class="message_text">
-                                        {{ message }}
-                                    </div>
-                                </li>
-                            {% endfor %}
-                            </ul>
-                        {% endif %}
-                    {% endwith %}           
-                </article>
-
+        <div class="main wrapper">
+            <article class="flashes">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul>
+                        {% for message in messages %}
+                            <li>
+                                <div class="fix-height"></div>
+                                <div class="exclamation_box vertical_center">
+                                    <i class="fa fa-exclamation vertical_center"></i>
+                                </div>
+                                <div class="message_text">
+                                    {{ message }}
+                                </div>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}           
+            </article>
+            <div class="content_container">
                 {% block content %}
                 {% endblock %}
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+            </div>
+        </div> <!-- #main -->
 
         <div class="footer-container">
             <footer class="wrapper">

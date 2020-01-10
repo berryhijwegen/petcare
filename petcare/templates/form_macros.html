@@ -1,22 +1,23 @@
 {% macro render_field(field) %}
-    <tr {% if field.errors %} class="error" {% endif %}>
-        <td>
+    <div class="input_container {{ field.id }}" {% if field.errors %} class="error" {% endif %}>
+        <div>
             {{field.label}}
-        </td>
-        <td>
+        </div>
+        <div>
             {{ field(**kwargs)|safe }}
-        </td>
-    </tr>
-    <tr class="error">
-        <td>
-
-        </td>
-        <td>
-            <ul>
-            {% for error in field.errors%}
-                <li>{{ error }}</li>
-            {% endfor %}
-            </ul>
-        </td>
-    </tr>
+        </div>
+        <div class="error">
+            <div>
+    
+            </div>
+            <div>
+                <ul>
+                {% for error in field.errors%}
+                    <li>{{ error }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
 {% endmacro %}

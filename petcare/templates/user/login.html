@@ -4,6 +4,10 @@
 Petcare -- Login
 {% endblock %}
 
+{% block css_includes %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
 {% block content%}
     <section>
         <h1>Please Login</h1>
@@ -13,7 +17,9 @@ Petcare -- Login
             {{ render_field(form.email, size=50) }}
             {{ render_field(form.password, size=50) }}
             {{ render_field(form.remember_me) }}
-            {{ render_field(form.submit) }}
+            <div>
+                <button type="submit">Register</button>
+            </div>
         </table>
         </form>
     </section>

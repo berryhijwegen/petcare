@@ -5,7 +5,7 @@ Petcare -- Add User
 {% endblock %}
 
 {% block css_includes %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/register_styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 {% endblock %}
 
 {% block content%}
@@ -21,14 +21,9 @@ Petcare -- Add User
             {{ render_field(form.display_name, size=50) }}
             {{ render_field(form.first_name, size=50) }}
             {{ render_field(form.surname, size=50) }}
-                <tr>
-                    <td>
-                        
-                    </td>
-                    <td>
-                        <button type="submit">Register</button>
-                    </td>
-                </tr>
+                <div class="submit">
+                    <button type="submit">Register</button>
+                </div>
         </table>
         </form>
     </section>

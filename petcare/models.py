@@ -33,14 +33,23 @@ class User(db.Model, UserMixin):
     @staticmethod
     def get_by_email(email):
         return User.query.filter_by(email=email).first_or_404()
+    
+    @staticmethod
+    def get_by_id(_id):
+        return User.query.filter_by(email=_id).first_or_404()
 
+    @staticmethod
     def update(user):
         db.session.add(user)
         db.session.commit()
 
     def __repr__(self):
-        user_type = 'User' if self.role == 0 else 'Seller'
-        return f"<{user_type} {self.display_name}>"
+        roles = {
+            0: 'User',
+            1: 'Seller',
+            2: 'Admin'
+        }
+        return f"<{roles[self.role]} {self.display_name}>"
 
 
 class Service(db.Model):

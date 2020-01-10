@@ -17,7 +17,7 @@ from petcare.models import User, Service
 
 @login_manager.user_loader
 def load_user(userid):
-    return User.query.get(int(userid))
+    return User.get_by_id(int(userid))
 
 
 def store_user(email, display_name, password, role=0,
@@ -84,7 +84,7 @@ def login():
             flash(f'User with email {email} does not exist.')
     
     # If method == GET
-    return render_template('login.html', form=form)
+    return render_template('user/login.html', form=form)
 
 @app.route('/logout')
 def logout():
