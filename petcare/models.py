@@ -32,11 +32,11 @@ class User(db.Model, UserMixin):
 
     @staticmethod
     def get_by_email(email):
-        return User.query.filter_by(email=email).first_or_404()
+        return User.query.filter_by(email=email).first()
     
     @staticmethod
-    def get_by_id(_id):
-        return User.query.filter_by(email=_id).first_or_404()
+    def get_by_id(user_id):
+        return User.query.get(user_id)
 
     @staticmethod
     def update(user):
