@@ -1,0 +1,252 @@
+/* OVERALL */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+/* NAV BAR */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  height: 50px;
+}
+nav li {
+  float: left;
+}
+nav li a {
+  display: block;
+  padding: 0;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  text-align: center;
+  padding: 0 16px;
+  text-decoration: none;
+}
+nav li a :hover {
+  background-color: #111;
+}
+
+.right {
+  float: right;
+}
+
+/* MAIN WRAPPER */
+.main.wrapper {
+  display: flex;
+}
+
+/* FLASHES */
+.flashes {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.flashes ul {
+  position: absolute;
+  top: 25px;
+  padding: 0;
+}
+.flashes ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  max-height: 120px;
+  border-radius: 20px;
+  background: #ffde24;
+  list-style-type: none;
+  margin: 0 10px;
+  -moz-animation: cssAnimation 2s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 2s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 2s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 2s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.flashes ul li .exclamation_box {
+  width: 20px;
+  border-right: black solid 2px;
+  margin-left: 15px;
+}
+.flashes ul li .message_text {
+  padding: 0 15px;
+}
+
+@keyframes cssAnimation {
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    opacity: 0;
+  }
+}
+
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/man_with_dog.webp");
+  /* Set a specific height */
+  height: calc(100vh - 50px);
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  color: white;
+}
+
+.hero-header-text {
+  font-size: 50px;
+}
+
+.wrapper {
+  height: calc(100% - 50px);
+}
+
+.content_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  background-color: #e7e7e7;
+}
+
+.login_container input[type=email], .login_container input[type=password] {
+  height: 45px;
+  min-width: 350px;
+  max-width: 700px;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px;
+}
+.login_container input:focus, .login_container button:focus {
+  outline: 0;
+}
+.login_container button {
+  background-color: #333;
+  color: white;
+  border: 0;
+  height: 50px;
+  font-size: 24px;
+  padding: 10px;
+  margin-top: 15px;
+}
+.login_container .remember_me {
+  display: flex;
+  justify-content: center;
+}
+.login_container .remember_me .error {
+  width: 0;
+}
+
+.wrapper {
+  height: calc(100% - 50px);
+}
+
+.content_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100vw;
+}
+
+.register_container form .register_form {
+  margin: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "email email" "password password_validate" "displayname displayname" "firstname surname" "submit submit";
+}
+.register_container .email {
+  grid-area: email;
+}
+.register_container .password {
+  grid-area: password;
+}
+.register_container .password_validate {
+  grid-area: password_validate;
+}
+.register_container .display_name {
+  grid-area: displayname;
+}
+.register_container .first_name {
+  grid-area: firstname;
+}
+.register_container .surname {
+  grid-area: surname;
+}
+.register_container .submit {
+  grid-area: submit;
+  padding-top: 15px;
+}
+.register_container body {
+  background-color: #e7e7e7;
+}
+.register_container input {
+  height: 45px;
+  min-width: 350px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px;
+}
+.register_container input :focus {
+  outline: 0;
+}
+.register_container button {
+  background-color: #333;
+  color: white;
+  border: 0;
+  padding: 10px;
+  height: 50px;
+  font-size: 24px;
+}
+.register_container button :focus {
+  outline: 0;
+}
+.register_container .error ul {
+  padding: 0;
+  margin: 0 0 0 10px;
+  text-align: left;
+}
+.register_container .error li {
+  list-style-type: none;
+  color: red;
+}
+@media screen and (max-width: 800px) {
+  .register_container form {
+    grid-template-areas: "email email" "password password" "password_validate password_validate" "displayname displayname" "firstname firstname" "surname surname" "submit submit";
+  }
+}

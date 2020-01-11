@@ -4,23 +4,17 @@
 Petcare -- Login
 {% endblock %}
 
-{% block css_includes %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-{% endblock %}
-
 {% block content%}
-    <section>
+    <section class="login_container">
         <h1>Please Login</h1>
-        <form action="" method="post">
+        <form class="login_form" action="" method="post">
             {{form.hidden_tag()}}
-        <table>
             {{ render_field(form.email, size=50) }}
             {{ render_field(form.password, size=50) }}
             {{ render_field(form.remember_me) }}
             <div>
-                <button type="submit">Register</button>
+                <button type="submit">Login</button>
             </div>
-        </table>
         </form>
     </section>
 {% endblock %}

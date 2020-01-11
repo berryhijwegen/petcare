@@ -1,0 +1,108 @@
+/* OVERALL */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* NAV BAR */
+nav {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        height: 50px;
+    }
+
+    li {
+        float: left;
+
+        a {
+            display: block;
+            padding: 0;
+            height: 50px;
+            line-height: 50px;
+            color: white;
+            text-align: center;
+            padding: 0 16px;
+            text-decoration: none;
+
+            :hover {
+                background-color: #111;
+            }
+        }
+    }
+}
+
+.right {
+    float: right;
+}
+
+/* MAIN WRAPPER */
+.main.wrapper {
+    display: flex;
+}
+
+/* FLASHES */
+.flashes {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        position: absolute;
+        top: 25px;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            max-height: 120px;
+            border-radius: 20px;
+            background: rgb(255, 222, 36);
+            list-style-type: none;
+            margin: 0 10px;
+        
+            -moz-animation: cssAnimation 2s ease-in 5s forwards;
+            /* Firefox */
+            -webkit-animation: cssAnimation 2s ease-in 5s forwards;
+            /* Safari and Chrome */
+            -o-animation: cssAnimation 2s ease-in 5s forwards;
+            /* Opera */
+            animation: cssAnimation 2s ease-in 5s forwards;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+
+            .exclamation_box {
+                width: 20px;
+                border-right: black solid 2px;
+                margin-left: 15px;
+            }
+
+            .message_text {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+@keyframes cssAnimation {
+    to {
+        opacity:0
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        opacity:0
+    }
+}

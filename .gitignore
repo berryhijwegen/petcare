@@ -4,3 +4,4 @@ pet_project
 *.db
 __pycache__
 *.env
+.webassets-cache

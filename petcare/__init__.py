@@ -37,5 +37,18 @@ mail_settings = {
 app.config.update(mail_settings)
 mail = Mail(app)
 
+# Configure SCSS Compiler
+from flask_assets import Environment, Bundle
+assets = Environment(app)
+
+
+assets.url = app.static_url_path
+assets.directory = app.static_folder
+assets.append_path('static/css')
+
+scss = Bundle('base.scss', 'index.scss', 'login.scss','register.scss', filters='scss', output='all.css')
+assets.register('scss_all', scss)
+
+
 import petcare.models
 import petcare.views
