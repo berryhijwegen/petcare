@@ -23,7 +23,7 @@
                         {% if current_user.is_authenticated %}
                             <li class="right"><a href="{{ url_for('logout') }}">Sign Out</a></li>
                             <li class="right"><a href="{{ url_for('add_service') }}">Create Service</a></li>
-                            <li class="right"><a href="{{ url_for('add_service') }}">My Services</a></li>
+                            <li class="right"><a href="{{ url_for('get_services') }}">My Services</a></li>
                         {% else %}
                             <li class="right"><a href="{{ url_for('login') }}">Sign In</a></li>
                             <li class="right"><a href="{{ url_for('add_user') }}">Register</a></li>

@@ -16,8 +16,11 @@ from petcare.models import User, Service
 
 
 @login_manager.user_loader
-def load_user(userid):
-    return User.get_by_id(int(userid))
+def load_user(user_id):
+    try:
+        return User.get_by_id(user_id)
+    except:
+        return None
 
 
 def store_user(email, display_name, password, role=0,
@@ -35,7 +38,7 @@ def store_user(email, display_name, password, role=0,
 
 
 def store_service(service_name, description=None):
-    s = Service(service_name=service_name, user=current_user, description=description)
+    s = Service(service_name=service_name, user_id=current_user.id, description=description)
     try:
         db.session.add(s)
         db.session.commit()
@@ -112,7 +115,7 @@ def add_user():
 
             confirm_url = url_for('confirm_email', token=token, _external=True)
             send_registration_confirmation_mail(email, confirm_url)
-            flash("Your account has succesfully been created. Please login.")
+            flash("Your account has succesfully been created. Please confirm your account.")
             return redirect(url_for('login'))
         else:
             flash(f'There is already an account registered with this email \
@@ -132,11 +135,16 @@ def confirm_email(token):
         return redirect(url_for('login'))
     else:
         user.confirmed = True
-        user.confirmed_on = datetime.datetime.now()
+        user.confirmed_at = datetime.datetime.now()
         User.update(user)
         flash('You have confirmed your account. Thanks!', 'success')
     return redirect(url_for('index'))
 
+@app.route('/services')
+@login_required
+def get_services():
+    services = current_user.services
+    return render_template('user/services.html', services=services)
 
 @app.route('/service/add', methods=['GET', 'POST'])
 @login_required

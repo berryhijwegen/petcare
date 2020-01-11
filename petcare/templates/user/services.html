@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+Petcare -- My Services
+{% endblock %}
+
+{% block content%}
+    <section class="services_container">
+        <ul>
+            {% for service in services%}
+            <li>{{service.service_name}}:{{service.description}}</li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
